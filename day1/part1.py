@@ -10,6 +10,9 @@ def calculation(value, cobination):
     Args:
         value (_type_): _description_
         cobination (_type_): _description_
+
+    Returns:
+        _type_: _description_
     """
     if cobination["rotation"] == "L":
         return (value - cobination["value"]) % 100

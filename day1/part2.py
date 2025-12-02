@@ -1,18 +1,18 @@
-"""day 1 advent of code"""
+"""day 1 advent of code 2025"""
 
 
 STARTING_POINT = 50
 
 
 def calculation(value, cobination):
-    """
-    Compute:
-      - how many times the dial hits 0 during this rotation
-      - the dial's new final position (0 - 99)
+    """_summary_
 
     Args:
-        value (int): current dial position
-        combination (dict): { "rotation": "L" or "R", "value": steps }
+        value (_type_): _description_
+        cobination (_type_): _description_
+
+    Returns:
+        _type_: _description_
     """
     if cobination["rotation"] == "L":
         exeded_l = 0
