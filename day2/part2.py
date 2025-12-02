@@ -1,5 +1,6 @@
 """day 2 advent of code 2025"""
 import csv
+import textwrap
 
 
 def extract_numbers(item_ranges):
@@ -19,26 +20,18 @@ def extract_numbers(item_ranges):
     return number_list
 
 
-def splits(count):
-    """_summary_
-
-    Args:
-        count (_type_): _description_
-    """
-    print(count)
-    # print range(0, (m+1)*n, n)[1:]
-
-
 def check_valid_number(number):
     """_summary_
 
     Args:
         number (_type_): _description_
     """
-    splits(number)
     number_to_check = str(number)
-    print(number_to_check)
-
+    for i in range(1, (len(number_to_check)//2)+1):
+        splits = textwrap.wrap(number_to_check, i)
+        print(splits)
+        if splits[:-1] == splits[1:]:
+            return number
     return 0
 
 
@@ -53,5 +46,10 @@ if __name__ == "__main__":
 
     number_range_list = extract_numbers(extracted_ranges)
 
-    for elem in number_range_list[0]:
-        print(elem)
+    SUM_INVALID_ID = 0
+    for id_range in number_range_list:
+        for id_number in id_range:
+            invalid_id = check_valid_number(id_number)
+            SUM_INVALID_ID += invalid_id
+
+    print(SUM_INVALID_ID)
