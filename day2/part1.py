@@ -45,7 +45,7 @@ if __name__ == "__main__":
 
     extracted_ranges = []
 
-    with open('input.txt', "r", encoding="utf-8",) as csvfile:
+    with open('input.txt', "r", encoding="utf-8") as csvfile:
         items_extracted = csv.reader(csvfile, delimiter=',')
         for item_elements in items_extracted:
             extracted_ranges = item_elements
